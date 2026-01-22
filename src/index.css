@@ -31,3 +31,11 @@ body{
   z-index: 50;
   padding: 5px;
 }
+
+.group span {
+  transform-origin: right;
+}
+
+.group:hover span {
+  transform-origin: left;
+}

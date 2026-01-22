@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Line from "./Line";
-import About from "./About";
+import Projects from './Projects.jsx'
 
 export default function Loader() {
   const loaderRef = useRef(null);
@@ -57,7 +57,7 @@ export default function Loader() {
       {showContent && (
         <>
           <Line />
-          <About />
+          <Projects />
         </>
       )}
 

@@ -15,8 +15,8 @@ const Nav = ({ closeNav, navOpen, setNavVisible }) => {
   const handleHoverIn = (e) => {
   const chars = e.currentTarget.querySelectorAll(".char");
   gsap.to(chars, {
-    yPercent: -8,
-    duration: 0.4,
+    yPercent: -5,
+    duration: 0.2,
     ease: "power3.out",
     stagger: {
       each: 0.03,
@@ -29,7 +29,7 @@ const handleHoverOut = (e) => {
   const chars = e.currentTarget.querySelectorAll(".char");
   gsap.to(chars, {
     yPercent: 0,
-    duration: 0.2,
+    duration: 0.1,
     ease: "power3.out",
     stagger: {
       each: 0.03,
@@ -114,7 +114,7 @@ useEffect(() => {
   return (
     <div
       ref={navRef}
-      className="bg-[#212121] flex h-screen w-screen fixed inset-0 z-[1000]"
+      className="bg-[#111] flex h-screen w-screen fixed inset-0 z-[1000]"
     >
       <button
         onClick={closeNav}
@@ -123,10 +123,15 @@ useEffect(() => {
         CLOSE
       </button>
 
-      <div className="navbar-bottom absolute bottom-0 my-2 h-[30vh] w-full overflow-hidden flex items-center">
+      <div className=" h-[67vh] flex flex-row -mt-0.5 justify-center items-center w-full">
+        <div className="h-full w-[70%] "></div>
+        <div className="h-full w-[30%] border-l  border-white "></div>
+      </div>
+
+      <div className="navbar-bottom border-t border-white border-b absolute bottom-0 mb-6 h-[30vh] w-full overflow-hidden flex items-center">
         <div
           ref={linksRef}
-          className="links-row flex px-15 gap-10 uppercase text-white text-[10vw] font-black"
+          className="links-row flex px-15 -mt-8 gap-10 uppercase text-white text-[10vw] font-black"
         >
           {["Home", "About", "Projects", "Contact"].map((text, i) => (
             <span
@@ -146,7 +151,18 @@ useEffect(() => {
                 <span className="text-[#A1FF62]">.</span>
               </span>
               
-                 <span className="absolute bottom-0 left-0 w-0 h-[5px] bg-[#A1FF62] transition-all duration-300 ease-out group-hover:w-full" />
+ <span
+  className="
+    absolute bottom-0 left-0 h-[5px] w-full
+    bg-[#A1FF62]
+    scale-x-0
+    origin-left
+    transition-transform duration-300 ease-out
+    group-hover:scale-x-100
+  "
+/>
+
+
 
             </span>
           ))}
